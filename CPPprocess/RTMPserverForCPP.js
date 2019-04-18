@@ -62,9 +62,9 @@ rtmpServer.on('client', client => {
 	    }
 	    
 	    // Traffic Light Event Detected
-	    // The string in the next line  should match darknet's output for trafficLightDetected event
+	    // The string in the next line  should match darknet's output for redLight event
 	    if(data.toString().includes('red')) { 
-	    	console.log(S_LOG + 'Traffic Light Detected Event');
+	    	console.log(S_LOG + 'Red Light Event');
 	    	
 		/* in the next line:
 			First string is the event's name - should by the same as the name in the app
@@ -72,7 +72,7 @@ rtmpServer.on('client', client => {
 			Last is the message for TTS (this is the only place it is set 
 				=> no problem to change it)
     	*/	
-	   		io.emit('trafficLightDetected', {"data" : 'Traffic light detected'}); 
+	   		io.emit('redLight', {"data" : 'Red light'}); 
 	    }	
 	  // DRANKNET - END
     
