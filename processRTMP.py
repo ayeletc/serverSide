@@ -9,7 +9,8 @@ import socket
 
 print("finish import")
 
-serverIP = socket.gethostbyname(socket.gethostname())
+serverIP = socket.gethostbyname(socket.gethostname()) #windows
+# serverIP = socket.gethostbyname("") #mac mojave https://stackoverflow.com/a/40079851
 print("server ip: ", serverIP)
 
 cap = cv2.VideoCapture("rtmp://" + serverIP + ":1936/live/stream")
