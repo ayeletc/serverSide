@@ -1,3 +1,9 @@
+/*
+ Move this file to the the build dir of the darknet 
+ with the relevant node_modules: 
+ rtmp-server, http, socket.io, child_process, tree-kill
+*/
+
 const S_LOG = "Server: ";
 const C_LOG = "CPP: ";
 const RtmpServer = require('rtmp-server');
@@ -37,11 +43,7 @@ rtmpServer.on('client', client => {
 	console.log(S_LOG + 'start CV process (C++)');
     var spawn = require('child_process').spawn,
     videoProcessing  = spawn('./darknet', ['./']);
-    
-	// TODO 
-    // - move this file to the the dir that includes darknet 
-    // - replace "hello" with "darknet" 
-    
+        
     videoProcessing.stdout.on('data', function(data) {
 	    console.log(C_LOG + data.toString());
 	    
