@@ -27,4 +27,4 @@ rtmpServer.on('client', client => {
   });
 });
 
-rtmpServer.listen(1935);
+rtmpServer.listen(1936);
