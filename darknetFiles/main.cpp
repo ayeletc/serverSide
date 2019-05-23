@@ -56,8 +56,7 @@ int main(int argc, char **argv) {
 
 	std::string videoAddress;
 	getVideoAddress(&videoAddress);
-	std::cout <<  "Video Address: " + videoAddress << "\n";
-
+	std::cout <<  "Video Address: " + videoAddress << std::endl;
     try {
         // 1: create VideoProcess Instance with the location of the video.
         // best idea is to write the full  path to it.
@@ -99,7 +98,7 @@ int decision = darknet_main(modeFlag, &im, meta.currentFrameNumber);
 
 framesDecision[framesCount] = decision;
 framesCount = ++framesCount;
-std::cout << "check frames num" << "\n";
+//std::cout << "check frames num" << "\n";
 if(meta.currentFrameNumber >= 5){
 	
 	//make a decision based on 5-frames
@@ -118,16 +117,19 @@ if(meta.currentFrameNumber >= 5){
 	if(greenNum > redNum){
 //		printf("\n/////////////////\ngreen\n////////////////\n");
 //		printf("\n/green/\n");
-		std::cout <<  "green" << "\n";
+//		std::cout <<  "green" << "\n";
+		std::cout <<  "green" << std::endl;
 		finalDecision = 2; // green
 	} else if(greenNum <= redNum){
 //		printf("\n/////////////////\nred\n////////////////\n");
 //		printf("\n/red/\n");
-		std::cout <<  "red" << "\n";
+//		std::cout <<  "red" << "\n";
+		std::cout <<  "red" << std::endl;
 		finalDecision = 1; // red
 	} else{
 //		printf("an error occurred!\n");
-		std::cout <<  "an error occurred!" << "\n";
+//		std::cout <<  "an error occurred!" << "\n";
+		std::cout <<  "an error occurred!" << std::endl;
 	}
 
 	if(framesCount >= 5){ // instead of using "mod"
@@ -141,12 +143,14 @@ else{ //for having a logo on the first 5 frames
 	if(decision == 2){
 //		printf("\n/////////////////\ngreen\n////////////////\n");
 //		printf("\n/green/\n");
-		std::cout <<  "green" << "\n";
+//		std::cout <<  "green" << "\n";
+		std::cout <<  "green" << std::endl;	
 	}
 	else{
 //		printf("\n/////////////////\nred\n////////////////\n");
 //		printf("\n/red/\n");
-		std::cout <<  "red" << "\n";
+//		std::cout <<  "red" << "\n";
+		std::cout <<  "red" << std::endl;
 	}
 }
 
@@ -180,39 +184,4 @@ if(modeFlag == 2){ //added for showing image result
 
 
 }
-/*
-int getVideoAddress(std::string *videoAddress) {
-//what is my IP
-    struct ifaddrs * ifAddrStruct=NULL;
-    struct ifaddrs * ifa=NULL;
-    void * tmpAddrPtr=NULL;
-    
-    getifaddrs(&ifAddrStruct);
-	char *IPAddress = new char [16];
-    for (ifa = ifAddrStruct; ifa != NULL; ifa = ifa->ifa_next) {
-        if (!ifa->ifa_addr) {
-            continue;
-        }
-        if (ifa->ifa_addr->sa_family == AF_INET) {
-            tmpAddrPtr=&((struct sockaddr_in *)ifa->ifa_addr)->sin_addr;
-            char addressBuffer[INET_ADDRSTRLEN];
-            inet_ntop(AF_INET, tmpAddrPtr, addressBuffer, INET_ADDRSTRLEN);
-            
-			if (sizeof(addressBuffer) > 8 && !strstr(ifa->ifa_name, "lo") ) {
-           	  	strcpy (IPAddress,addressBuffer);
-			}			
-        }
-    }
-    if (ifAddrStruct!=NULL) freeifaddrs(ifAddrStruct);
-
-// Concatenate
-	std::string head = "rtmp://";
-	std::string mid = IPAddress;
-	std::string tail = ":1936/live/stream";
-	*videoAddress = head + mid + tail;
-     delete [] IPAddress;
-//     return videoAddress;
-	return 0;
-}
-*/
 
