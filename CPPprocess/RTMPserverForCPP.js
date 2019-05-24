@@ -43,11 +43,14 @@ rtmpServer.on('client', client => {
 	console.log(S_LOG + 'start CV process (C++)');
     var spawn = require('child_process').spawn,
     videoProcessing  = spawn('./darknet', ['./']);
-        
+//     videoProcessing  = spawn('./whatismyip', ['./']); // if we suspect that there is a problem with the WiFi:
+// 	  we can uncomment this line (instead of the one above).
+// 	  if the project works (write the url) the problem is just the Wifi.
+    
     videoProcessing.stdout.on('data', function(data) {
 	    console.log(C_LOG + data.toString());
 	    
-	    // DRANKNET
+	    // DARKNET
 	    
 	    // Green Light Event
 	    // The string in the next line  should match darknet's output for greenLight event
@@ -60,7 +63,7 @@ rtmpServer.on('client', client => {
 			Last is the message for TTS (this is the only place it is set 
 				=> no problem to change it)
     	*/	
-	   		io.emit('greenLight', {"data" : 'Green light'}); 
+	   		io.emit('greenLight', {"data" : 'walk'}); 
 	    }
 	    
 	    // Traffic Light Event Detected
@@ -74,9 +77,9 @@ rtmpServer.on('client', client => {
 			Last is the message for TTS (this is the only place it is set 
 				=> no problem to change it)
     	*/	
-	   		io.emit('redLight', {"data" : 'Red light'}); 
+	   		io.emit('redLight', {"data" : 'dont walk'}); 
 	    }	
-	  // DRANKNET - END
+	  // DARKNET - END
     
     });  
     videoProcessing.stderr.on('data', function(data) {
