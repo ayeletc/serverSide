@@ -56,6 +56,7 @@ int main()
     // Save the last frame
     if(lastFrame != NULL){
     	imwrite("./img.jpg", lastFrame);
+	cout << "lastFrame saved" << endl; // to emit the event of processing using java and matlab
     }
     
     return 0;
