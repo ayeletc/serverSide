@@ -35,34 +35,35 @@ rtmpServer.on('client', client => {
     videoProcessing  = spawn('./extractFrame', ['./']);
     // Print LOG from CPP file
     videoProcessing.stdout.on('data', function(data) {
-	    console.log(C_LOG + data.toString());     
+	    console.log(C_LOG + data.toString());  
+    /* 
+   		// Last frame has been saved (hopefully).
+		// Time to call java to start processing using:
+		// TODO next:
+    		
+    		// (uncomment this after there are no more errors)
+		
+	    
+	    	if(data.toString().includes('lastFrame')) { 
+			var child = require('child_process').spawn(
+				'MatlabEngineMain', ['-jar', 'enginejar.jar', 'argument to pass in']
+			);
+			
+			// where 'MatlabEngineMain' is the compile .java file (after running "javac MatlabEngineMain.java" in cmd)
+	
+			// ref: https://stackoverflow.com/a/29242794
+		}
+	*/
     });  
     videoProcessing.stderr.on('data', function(data) {
     	console.log(C_LOG + 'error:\n' + data);
     });
+  
     
 });
   client.on('stop', () => {
     console.log(S_LOG + 'client disconnected');
     console.log(S_LOG + 'kill cpp process');
-	  
-/*
-
-	TODO next:
-	
-	Last frame has been saved (hopefully).
-	
-	Time to call java to start processing using:
-	
-	var child = require('child_process').spawn(
-  	'MatlabEngineMain', ['-jar', 'enginejar.jar', 'argument to pass in']
-	);
-
-	where 'MatlabEngineMain' is the compile .java file (after running "javac MatlabEngineMain.java" in cmd)
-	
-	ref: https://stackoverflow.com/a/29242794
-	
-*/
   });
 
 });
