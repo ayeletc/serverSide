@@ -45,6 +45,24 @@ rtmpServer.on('client', client => {
   client.on('stop', () => {
     console.log(S_LOG + 'client disconnected');
     console.log(S_LOG + 'kill cpp process');
+	  
+/*
+
+	TODO next:
+	
+	Last frame has been saved (hopefully).
+	
+	Time to call java to start processing using:
+	
+	var child = require('child_process').spawn(
+  	'MatlabEngineMain', ['-jar', 'enginejar.jar', 'argument to pass in']
+	);
+
+	where 'MatlabEngineMain' is the compile .java file (after running "javac MatlabEngineMain.java" in cmd)
+	
+	ref: https://stackoverflow.com/a/29242794
+	
+*/
   });
 
 });
