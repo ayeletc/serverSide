@@ -43,10 +43,13 @@ rtmpServer.on('client', client => {
 	console.log(S_LOG + 'start CV process (C++)');
     var spawn = require('child_process').spawn,
     videoProcessing  = spawn('./darknet', ['./']);
-//     videoProcessing  = spawn('./whatismyip', ['./']); // if we suspect that there is a problem with the WiFi:
-// 	  we can uncomment this line (instead of the one above).
-// 	  if the project works (write the url) the problem is just the Wifi.
-    
+/*	
+	if we suspect that there is a problem with the WiFi:
+ 	we can uncomment the next line (instead of the one above) and compile whatismyip.cpp.
+ 	if the project works (writing the url in the terminal) the problem is just the Wifi.
+*/    
+//     videoProcessing  = spawn('./whatismyip', ['./']); 
+	
     videoProcessing.stdout.on('data', function(data) {
 	    console.log(C_LOG + data.toString());
 	    
@@ -90,7 +93,11 @@ rtmpServer.on('client', client => {
   client.on('stop', () => {
     console.log(S_LOG + 'client disconnected');
     console.log(S_LOG + 'kill cpp process');
-//     kill(process.pid);   //TODO
+/* 
+	When the next line is uncomment, we kill the process when error occurs.
+	It is risky and you need to check if the errors you get are reliable enough.
+*/
+//     kill(process.pid);   //
 
   });
 
