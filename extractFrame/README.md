@@ -1,4 +1,4 @@
-# Extracting frames from video stream using OpenCV(C++) and Javascript 
+## Extracting frames from video stream using OpenCV(C++) and Javascript 
 
 ### 1. Installation
 
