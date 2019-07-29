@@ -47,5 +47,5 @@ node serverForFramesTest.js
 - Insert the server's IP
 - Start streaming 
 
-Now you should see the stream from the device in a new window in th server.
+Now you should see the stream from the device in a new window in th server, and when you finish the streaming you may refresh the dir and see there the last frame.
 
