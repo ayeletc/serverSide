@@ -1,6 +1,6 @@
 # Program using to extract frames from video stream using C++&OpenCV and javascript server 
 
-### 1. installation
+### 1. Installation
 
 Save all the files from the [git] (https://github.com/ayeletc/serverSide/tree/master/extractFrame) in one folder (inside the main folder of the mechnics project).
 
