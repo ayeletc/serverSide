@@ -1,6 +1,6 @@
 # Program using to extract frames from video stream using C++&OpenCV and javascript server 
 
-## 1- compile the C++ files:
+### 1 - compile the C++ files
 
 Prerequisits: OpenCV (for C++) installed
 		
@@ -25,7 +25,7 @@ Then, copy the libs you get as an output to:
 g++ *.cpp LIBRARIES
 '''
 
-## 2- Install JS packages:
+### 2 - Install JS packages
 
 In the project dir run the following commands: 
 '''
@@ -34,13 +34,13 @@ npm install child_process
 npm install socket.io
 '''
 
-## 3- Open the server:
+### 3 - Open the server
 Run in the project's dir:
 '''
 node serverForFramesTest.js
 '''
 	
-## 4- Start streaming:
+### 4 - Start streaming
 
 4.1 Check your server's IP 
 4.2 Open the app in the device
