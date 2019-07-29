@@ -2,7 +2,7 @@
 
 ### 1. Installation
 
-Save all the files from the [git] (https://github.com/ayeletc/serverSide/tree/master/extractFrame/) in one folder (inside the main folder of the mechnics project).
+Save all the files from [my git](https://github.com/ayeletc/serverSide/tree/master/extractFrame/) in one folder (inside the main folder of the mechnics project).
 
 ### 2. Compile the C++ files
 
