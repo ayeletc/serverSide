@@ -42,10 +42,10 @@ node serverForFramesTest.js
 	
 ### 5. Start streaming
 
-5.1 Check your server's IP 
-5.2 Open the app in the device
-5.3 Insert the server's IP
-5.4 Start streaming 
+	5.1 Check your server's IP 
+	5.2 Open the app in the device
+	5.3 Insert the server's IP
+	5.4 Start streaming 
 
 Now you should see the stream from the device in a new window in th server.
 
