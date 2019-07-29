@@ -1,4 +1,4 @@
-# Program using to extract frames from video stream using C++&OpenCV and javascript server 
+# Extracting frames from video stream using OpenCV(C++) and Javascript 
 
 ### 1. Installation
 
