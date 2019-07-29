@@ -2,9 +2,6 @@
 
 ### 1 - compile the C++ files
 
-Prerequisits: OpenCV (for C++) installed
-		
-		
 Save all the files from the [git] (https://github.com/ayeletc/serverSide/tree/master/extractFrame) in one folder.
 
 Try compile using the next command in the project's dir:
@@ -35,6 +32,7 @@ npm install socket.io
 ```
 
 ### 3 - Open the server
+
 Run in the project's dir:
 ```bash
 node serverForFramesTest.js
